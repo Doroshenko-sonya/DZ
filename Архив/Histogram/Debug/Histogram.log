@@ -1,0 +1,6 @@
+﻿  Histogram_test.cpp
+C:\Users\Admin\source\repos\Histogram\Histogram\Histogram_test.cpp(151,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\Admin\source\repos\Histogram\Histogram\Histogram_test.cpp(160,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\Admin\source\repos\Histogram\Histogram\Histogram_test.cpp(214,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\Admin\source\repos\Histogram\Histogram\Histogram_test.cpp(217,12): warning C4244:  инициализация: преобразование "double" в "int", возможна потеря данных
+  Histogram.vcxproj -> C:\Users\Admin\source\repos\Histogram\Debug\Histogram.exe

@@ -1,0 +1,91 @@
+#include <iostream>
+using namespace std;
+
+class Array
+{
+private:
+    int* arr;
+    int N;
+public:
+    Array()
+    {
+        N = 1;
+        arr = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            arr[i] = 0;
+        }
+    }
+    Array(int n) 
+    {
+        N = n;
+        arr = new int[N];
+        set();
+    }
+
+    Array(const Array& source) 
+    {
+        N = source.N;
+        arr = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            arr[i] = source.arr[i];
+        }
+    }
+
+    ~Array() 
+    {
+        delete[]arr; 
+    }
+
+    int getsize() 
+    {
+        return N;
+    }
+    
+    int* getArray()
+    {
+        return arr;
+    }
+
+    void print() 
+    {
+        for (int i = 0; i < N; i++)
+            cout << arr[i] << "  ";
+        cout << endl;
+    }
+
+    void set() 
+    {
+        srand(time(0));
+        for (int i = 0; i < N; i++)
+            arr[i] = rand() % 100;
+    }
+
+    template< class T >
+    void insertSort(T* arr, int N)
+    {
+        T tmp;
+        for (int i = 1, j; i < N; ++i)
+        {
+            tmp = arr[i];
+            for (j = i - 1; j >= 0 && arr[j] > tmp; --j) 
+                arr[j + 1] = arr[j];    
+            arr[j + 1] = tmp;   
+        }
+    }
+    
+};
+
+int main()
+{
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
+    Array array(n);
+    cout << "Array: " << endl;
+    array.print();
+    int* a = array.getArray();
+    array.insertSort(a,n);
+    array.print();
+}
